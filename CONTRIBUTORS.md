@@ -33,6 +33,7 @@ its **Status** is what changes.
 
 | Mock service | Contributor | Affiliation | Status |
 |---|---|---|---|
+| `zendesk_support` | Yuxuan Zhang ([@reacher-z](https://github.com/reacher-z)) | Independent | staged |
 <!-- | `acme_crm` | Jane Doe ([@janedoe](https://github.com/janedoe)) | Independent | staged | -->
 
 _Opens with the first community mock. Be the first._

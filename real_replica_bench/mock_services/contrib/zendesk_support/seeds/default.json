@@ -1,0 +1,267 @@
+{
+  "meta": {
+    "seed_version": "1",
+    "clock": "2026-08-01T09:00:00.000Z",
+    "next_ids": {
+      "ticket": 1006,
+      "comment": 5010
+    }
+  },
+  "users": [
+    {
+      "id": 101,
+      "name": "Mina Patel",
+      "email": "mina.patel@example.test",
+      "role": "admin",
+      "active": true
+    },
+    {
+      "id": 102,
+      "name": "Jon Bell",
+      "email": "jon.bell@example.test",
+      "role": "agent",
+      "active": true
+    },
+    {
+      "id": 103,
+      "name": "Rosa Kim",
+      "email": "rosa.kim@example.test",
+      "role": "agent",
+      "active": true
+    },
+    {
+      "id": 201,
+      "name": "Avery Chen",
+      "email": "avery.chen@example.test",
+      "role": "end-user",
+      "active": true,
+      "organization_id": 301
+    },
+    {
+      "id": 202,
+      "name": "Sam Okafor",
+      "email": "sam.okafor@example.test",
+      "role": "end-user",
+      "active": true,
+      "organization_id": 302
+    }
+  ],
+  "organizations": [
+    {
+      "id": 301,
+      "name": "Northwind Bikes",
+      "details": "Synthetic retail account",
+      "tags": ["retail", "priority-account"]
+    },
+    {
+      "id": 302,
+      "name": "Cedar Labs",
+      "details": "Synthetic research account",
+      "tags": ["research"]
+    }
+  ],
+  "groups": [
+    {
+      "id": 401,
+      "name": "Order Support"
+    },
+    {
+      "id": 402,
+      "name": "Billing Escalations"
+    }
+  ],
+  "custom_field_definitions": [
+    {
+      "id": 9001,
+      "name": "order_id",
+      "type": "order-id"
+    },
+    {
+      "id": 9002,
+      "name": "refund_reason",
+      "type": "enum",
+      "options": ["damaged", "late-delivery", "missing-item", "other"]
+    },
+    {
+      "id": 9003,
+      "name": "refund_amount",
+      "type": "amount"
+    }
+  ],
+  "tickets": [
+    {
+      "id": 1001,
+      "subject": "Damaged rear light in order ORD-41027",
+      "description": "The rear light arrived with a cracked lens.",
+      "status": "open",
+      "priority": "high",
+      "type": "incident",
+      "requester_id": 201,
+      "submitter_id": 201,
+      "assignee_id": 102,
+      "group_id": 401,
+      "organization_id": 301,
+      "tags": ["damage", "order"],
+      "custom_fields": [
+        {"id": 9001, "value": "ORD-41027"},
+        {"id": 9002, "value": "damaged"},
+        {"id": 9003, "value": 39.5}
+      ],
+      "via": {"channel": "web"},
+      "created_at": "2026-08-01T08:00:00.000Z",
+      "updated_at": "2026-08-01T08:20:00.000Z"
+    },
+    {
+      "id": 1002,
+      "subject": "Invoice contains duplicate charge",
+      "description": "July invoice appears to bill the workspace twice.",
+      "status": "pending",
+      "priority": "urgent",
+      "type": "problem",
+      "requester_id": 202,
+      "submitter_id": 202,
+      "assignee_id": 103,
+      "group_id": 402,
+      "organization_id": 302,
+      "tags": ["billing", "duplicate-charge"],
+      "custom_fields": [],
+      "via": {"channel": "email"},
+      "created_at": "2026-07-31T15:00:00.000Z",
+      "updated_at": "2026-08-01T07:45:00.000Z"
+    },
+    {
+      "id": 1003,
+      "subject": "Tracking page has not updated",
+      "description": "Shipment status has remained unchanged for three days.",
+      "status": "hold",
+      "priority": "normal",
+      "type": "question",
+      "requester_id": 201,
+      "submitter_id": 201,
+      "assignee_id": 102,
+      "group_id": 401,
+      "organization_id": 301,
+      "tags": ["delivery", "tracking"],
+      "custom_fields": [
+        {"id": 9001, "value": "ORD-40988"},
+        {"id": 9002, "value": "late-delivery"}
+      ],
+      "via": {"channel": "web"},
+      "created_at": "2026-07-29T10:00:00.000Z",
+      "updated_at": "2026-07-31T09:10:00.000Z"
+    },
+    {
+      "id": 1004,
+      "subject": "Update shipping address before dispatch",
+      "description": "Please use the address already saved on the account.",
+      "status": "solved",
+      "priority": "normal",
+      "type": "task",
+      "requester_id": 201,
+      "submitter_id": 201,
+      "assignee_id": 103,
+      "group_id": 401,
+      "organization_id": 301,
+      "tags": ["address-change", "order"],
+      "custom_fields": [
+        {"id": 9001, "value": "ORD-41002"}
+      ],
+      "via": {"channel": "email"},
+      "created_at": "2026-07-30T11:00:00.000Z",
+      "updated_at": "2026-07-30T12:30:00.000Z"
+    },
+    {
+      "id": 1005,
+      "subject": "Request a copy of the receipt",
+      "description": "A PDF receipt is needed for expense reporting.",
+      "status": "new",
+      "priority": "low",
+      "type": "question",
+      "requester_id": 202,
+      "submitter_id": 202,
+      "assignee_id": null,
+      "group_id": 402,
+      "organization_id": 302,
+      "tags": ["billing", "receipt"],
+      "custom_fields": [],
+      "via": {"channel": "web"},
+      "created_at": "2026-08-01T08:45:00.000Z",
+      "updated_at": "2026-08-01T08:45:00.000Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": 5001,
+      "ticket_id": 1001,
+      "author_id": 201,
+      "body": "The rear light arrived with a cracked lens.",
+      "public": true,
+      "created_at": "2026-08-01T08:00:00.000Z"
+    },
+    {
+      "id": 5002,
+      "ticket_id": 1001,
+      "author_id": 102,
+      "body": "Thanks for the photo description. I am checking replacement stock.",
+      "public": true,
+      "created_at": "2026-08-01T08:20:00.000Z"
+    },
+    {
+      "id": 5003,
+      "ticket_id": 1002,
+      "author_id": 202,
+      "body": "July invoice appears to bill the workspace twice.",
+      "public": true,
+      "created_at": "2026-07-31T15:00:00.000Z"
+    },
+    {
+      "id": 5004,
+      "ticket_id": 1002,
+      "author_id": 103,
+      "body": "Finance is comparing the two transaction references.",
+      "public": false,
+      "created_at": "2026-08-01T07:45:00.000Z"
+    },
+    {
+      "id": 5005,
+      "ticket_id": 1003,
+      "author_id": 201,
+      "body": "Shipment status has remained unchanged for three days.",
+      "public": true,
+      "created_at": "2026-07-29T10:00:00.000Z"
+    },
+    {
+      "id": 5006,
+      "ticket_id": 1003,
+      "author_id": 102,
+      "body": "The carrier trace is open; holding until it responds.",
+      "public": true,
+      "created_at": "2026-07-31T09:10:00.000Z"
+    },
+    {
+      "id": 5007,
+      "ticket_id": 1004,
+      "author_id": 201,
+      "body": "Please use the address already saved on the account.",
+      "public": true,
+      "created_at": "2026-07-30T11:00:00.000Z"
+    },
+    {
+      "id": 5008,
+      "ticket_id": 1004,
+      "author_id": 103,
+      "body": "The dispatch address was updated before label creation.",
+      "public": true,
+      "created_at": "2026-07-30T12:30:00.000Z"
+    },
+    {
+      "id": 5009,
+      "ticket_id": 1005,
+      "author_id": 202,
+      "body": "A PDF receipt is needed for expense reporting.",
+      "public": true,
+      "created_at": "2026-08-01T08:45:00.000Z"
+    }
+  ],
+  "audit": []
+}
